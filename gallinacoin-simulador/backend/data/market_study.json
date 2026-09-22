@@ -1,0 +1,54 @@
+{
+  "periodo": "Septiembre - Diciembre 2026",
+  "moneda": "GTQ",
+  "meses": [
+    {
+      "mes": "Septiembre",
+      "indice": 0,
+      "anio": 2026,
+      "produccion": "estable",
+      "demanda": "normal",
+      "precio_huevo_base_Pe": 1.20,
+      "variacion_Pe_porcentaje": 0,
+      "costo_alimento_index": 1.00,
+      "margen_operativo_porcentaje": 15,
+      "descripcion": "Producción estable, demanda normal, precio base del huevo."
+    },
+    {
+      "mes": "Octubre",
+      "indice": 1,
+      "anio": 2026,
+      "produccion": "estable",
+      "demanda": "constante",
+      "precio_huevo_base_Pe": 1.20,
+      "variacion_Pe_porcentaje": 0,
+      "costo_alimento_index": 1.00,
+      "margen_operativo_porcentaje": 15,
+      "descripcion": "Costos de alimento estables, mercado constante."
+    },
+    {
+      "mes": "Noviembre",
+      "indice": 2,
+      "anio": 2026,
+      "produccion": "estable",
+      "demanda": "incremento_estacional",
+      "precio_huevo_base_Pe": 1.32,
+      "variacion_Pe_porcentaje": 10,
+      "costo_alimento_index": 1.05,
+      "margen_operativo_porcentaje": 18,
+      "descripcion": "Incremento estacional de demanda, ligera subida de Pe."
+    },
+    {
+      "mes": "Diciembre",
+      "indice": 3,
+      "anio": 2026,
+      "produccion": "estable",
+      "demanda": "pico_navideno",
+      "precio_huevo_base_Pe": 1.68,
+      "variacion_Pe_porcentaje": 40,
+      "costo_alimento_index": 1.10,
+      "margen_operativo_porcentaje": 28,
+      "descripcion": "Pico de demanda navideña, incremento fuerte de Pe y margen operativo."
+    }
+  ]
+}

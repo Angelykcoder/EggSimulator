@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GallinaCoin</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="gc-header">
+        <div class="gc-header__brand">
+            <span class="gc-logo">🥚</span>
+            <h1>GallinaCoin</h1>
+        </div>
+        <div class="gc-header__stats">
+            <div class="gc-stat">
+                <span class="gc-stat__label">Saldo virtual</span>
+                <span class="gc-stat__value" id="gc-saldo-activo">Q 0.00</span>
+            </div>
+            <div class="gc-stat">
+                <span class="gc-stat__label">Mes actual</span>
+                <span class="gc-stat__value" id="gc-mes-actual">—</span>
+            </div>
+        </div>
+        <button type="button" id="gc-btn-avanzar-mes" class="gc-btn gc-btn--primary">Avanzar Mes ▶</button>
+    </header>
+
+    <nav class="gc-tabs" id="gc-tabs">
+        <button type="button" class="gc-tab-btn is-active" data-tab="cliente">Módulo Inversionista</button>
+        <button type="button" class="gc-tab-btn" data-tab="granjero">Módulo Granjero</button>
+    </nav>
+
+    <p id="gc-mensaje" class="gc-toast" role="alert"></p>
+
+    <main class="gc-main">
+        <section id="gc-panel-cliente" class="gc-panel">
+            <div class="gc-cards">
+                <div class="gc-card">
+                    <span class="gc-card__label">Saldo disponible</span>
+                    <span class="gc-card__value" id="gc-cliente-saldo">Q 0.00</span>
+                </div>
+                <div class="gc-card">
+                    <span class="gc-card__label">Patrimonio en tokens</span>
+                    <span class="gc-card__value" id="gc-cliente-patrimonio">Q 0.00</span>
+                </div>
+                <div class="gc-card">
+                    <span class="gc-card__label">Ganancia / Pérdida</span>
+                    <span class="gc-card__value" id="gc-cliente-pl">Q 0.00</span>
+                </div>
+            </div>
+
+            <div class="gc-panel-grid">
+                <div class="gc-block">
+                    <h2>Mercado de Tokens GLC</h2>
+                    <div class="gc-table-wrap">
+                        <table class="gc-table">
+                            <thead>
+                                <tr><th>Granja</th><th>Precio</th><th>Disponibles</th><th></th></tr>
+                            </thead>
+                            <tbody id="gc-tabla-mercado"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="gc-block">
+                    <h2>Precio de tokens por granja</h2>
+                    <canvas id="gc-grafico-cliente" height="220"></canvas>
+                </div>
+            </div>
+
+            <div class="gc-block">
+                <h2>Mi Portafolio</h2>
+                <div class="gc-table-wrap">
+                    <table class="gc-table">
+                        <thead>
+                            <tr><th>Granja</th><th>Tokens</th><th>Costo prom.</th><th>Precio actual</th><th>P/L</th><th></th></tr>
+                        </thead>
+                        <tbody id="gc-tabla-portafolio"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="gc-panel-granjero" class="gc-panel" hidden>
+            <div class="gc-cards">
+                <div class="gc-card">
+                    <span class="gc-card__label">Saldo disponible</span>
+                    <span class="gc-card__value" id="gc-granjero-saldo">Q 0.00</span>
+                </div>
+                <div class="gc-card">
+                    <span class="gc-card__label">Producción total</span>
+                    <span class="gc-card__value" id="gc-granjero-produccion">0 huevos/mes</span>
+                </div>
+                <div class="gc-card">
+                    <span class="gc-card__label">Costos operativos</span>
+                    <span class="gc-card__value" id="gc-granjero-costos">Q 0.00</span>
+                </div>
+            </div>
+
+            <div class="gc-panel-grid">
+                <div class="gc-block">
+                    <h2>Mis Granjas</h2>
+                    <div class="gc-table-wrap">
+                        <table class="gc-table">
+                            <thead>
+                                <tr><th>Nombre</th><th>Gallinas</th><th>Producción</th><th>Costos</th><th>Precio token</th><th>Valor patrimonial</th><th></th></tr>
+                            </thead>
+                            <tbody id="gc-tabla-granjas"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="gc-block">
+                    <h2>Producción por granja</h2>
+                    <canvas id="gc-grafico-granjero" height="220"></canvas>
+                </div>
+            </div>
+
+            <div class="gc-block">
+                <h2>Registrar nueva granja</h2>
+                <form id="gc-form-granja" class="gc-form">
+                    <div class="gc-form__grid">
+                        <label>Nombre
+                            <input type="text" name="nombre" required>
+                        </label>
+                        <label>Gallinas
+                            <input type="number" name="gallinas" min="1" required>
+                        </label>
+                        <label>Producción prom. / gallina
+                            <input type="number" name="produccion_promedio" min="0" step="0.01" required>
+                        </label>
+                        <label>Costo alimento
+                            <input type="number" name="alimento_costo" min="0" step="0.01" required>
+                        </label>
+                        <label>Costo mantenimiento
+                            <input type="number" name="mantenimiento_costo" min="0" step="0.01" required>
+                        </label>
+                        <label>Otros costos
+                            <input type="number" name="otros_costos" min="0" step="0.01" required>
+                        </label>
+                        <label>Precio token inicial
+                            <input type="number" name="precio_token" min="0.01" step="0.01" required>
+                        </label>
+                        <label>Tokens emitidos
+                            <input type="number" name="tokens_emitidos" min="1" required>
+                        </label>
+                    </div>
+                    <p id="gc-form-granja-error" class="gc-form__error"></p>
+                    <button type="submit" class="gc-btn gc-btn--primary">Registrar granja</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="gc-modal-overlay" class="gc-modal-overlay" hidden>
+        <div class="gc-modal" id="gc-modal-content"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/client_module.js"></script>
+    <script src="js/farmer_module.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
