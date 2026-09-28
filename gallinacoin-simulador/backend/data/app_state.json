@@ -1,14 +1,22 @@
 {
-  "mes_actual": "Septiembre 2026",
-  "mes_indice": 0,
+  "mes_actual": "Octubre 2026",
+  "mes_indice": 1,
   "usuarios": {
     "cliente": {
-      "saldo": 5000,
-      "portafolio": []
+      "saldo": 2930.0,
+      "portafolio": [
+        {
+          "granja_id": 2,
+          "tokens": 138,
+          "costo_promedio": 15.0
+        }
+      ]
     },
     "granjero": {
       "saldo": 10000,
-      "granjas_propias": [1]
+      "granjas_propias": [
+        1
+      ]
     }
   },
   "granjas": [
@@ -20,9 +28,9 @@
       "alimento_costo": 800,
       "mantenimiento_costo": 200,
       "otros_costos": 100,
-      "precio_token": 10.0,
+      "precio_token": 312.4475,
       "tokens_emitidos": 1000,
-      "valor_patrimonial": 10000
+      "valor_patrimonial": 312447.5
     },
     {
       "id": 2,
@@ -32,10 +40,88 @@
       "alimento_costo": 1280,
       "mantenimiento_costo": 320,
       "otros_costos": 150,
-      "precio_token": 15.0,
-      "tokens_emitidos": 1200,
-      "valor_patrimonial": 18000
+      "precio_token": 661.1097,
+      "tokens_emitidos": 1062,
+      "valor_patrimonial": 793331.6
     }
   ],
-  "historial_transacciones": []
+  "historial_transacciones": [
+    {
+      "tipo": "compra",
+      "granja_id": 1,
+      "cantidad": 1,
+      "precio_unitario": 10.0,
+      "monto_total": 10.0,
+      "ganancia_realizada": 0,
+      "mes": "Septiembre 2026",
+      "nombre_granja": "Granja El Amanecer"
+    },
+    {
+      "tipo": "compra",
+      "granja_id": 2,
+      "cantidad": 150,
+      "precio_unitario": 15.0,
+      "monto_total": 2250.0,
+      "ganancia_realizada": 0,
+      "mes": "Septiembre 2026",
+      "nombre_granja": "Granja Santa Rosa"
+    },
+    {
+      "tipo": "venta",
+      "granja_id": 1,
+      "cantidad": 1,
+      "precio_unitario": 10.0,
+      "monto_total": 10.0,
+      "ganancia_realizada": 0.0,
+      "mes": "Septiembre 2026",
+      "nombre_granja": "Granja El Amanecer"
+    },
+    {
+      "tipo": "venta",
+      "granja_id": 2,
+      "cantidad": 12,
+      "precio_unitario": 15.0,
+      "monto_total": 180.0,
+      "ganancia_realizada": 0.0,
+      "mes": "Septiembre 2026",
+      "nombre_granja": "Granja Santa Rosa"
+    }
+  ],
+  "historial_inversion": [
+    {
+      "mes": "Septiembre 2026",
+      "evento": "Compra",
+      "valor_portafolio": 10.0,
+      "costo_base": 10.0,
+      "ganancia_estimada": 0.0
+    },
+    {
+      "mes": "Septiembre 2026",
+      "evento": "Compra",
+      "valor_portafolio": 2260.0,
+      "costo_base": 2260.0,
+      "ganancia_estimada": 0.0
+    },
+    {
+      "mes": "Septiembre 2026",
+      "evento": "Venta",
+      "valor_portafolio": 2250.0,
+      "costo_base": 2250.0,
+      "ganancia_estimada": 0.0
+    },
+    {
+      "mes": "Septiembre 2026",
+      "evento": "Venta",
+      "valor_portafolio": 2070.0,
+      "costo_base": 2070.0,
+      "ganancia_estimada": 0.0
+    },
+    {
+      "mes": "Octubre 2026",
+      "evento": "Avance mensual",
+      "valor_portafolio": 91233.14,
+      "costo_base": 2070.0,
+      "ganancia_estimada": 89163.14
+    }
+  ]
 }

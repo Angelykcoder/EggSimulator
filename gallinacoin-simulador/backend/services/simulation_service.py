@@ -38,6 +38,19 @@ class SimulationService:
         state["mes_indice"] = nuevo_indice
         state["mes_actual"] = self.MESES_SIMULACION[nuevo_indice]
 
+        granjas_por_id = {g["id"]: g for g in state["granjas"]}
+        posiciones = state["usuarios"]["cliente"]["portafolio"]
+        valor = sum(granjas_por_id[p["granja_id"]]["precio_token"] * p["tokens"]
+                    for p in posiciones if p["granja_id"] in granjas_por_id)
+        costo = sum(p["costo_promedio"] * p["tokens"] for p in posiciones)
+        state.setdefault("historial_inversion", []).append({
+            "mes": state["mes_actual"],
+            "evento": "Avance mensual",
+            "valor_portafolio": round(valor, 2),
+            "costo_base": round(costo, 2),
+            "ganancia_estimada": round(valor - costo, 2),
+        })
+
         self.state_manager.save_state(state)
 
         return {

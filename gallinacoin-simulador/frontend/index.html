@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GallinaCoin</title>
+    <title>Biteggcoin | Simulador</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header class="gc-header">
         <div class="gc-header__brand">
             <span class="gc-logo">🥚</span>
-            <h1>GallinaCoin</h1>
+            <h1>Biteggcoin</h1>
         </div>
         <div class="gc-header__stats">
             <div class="gc-stat">
@@ -51,7 +51,8 @@
 
             <div class="gc-panel-grid">
                 <div class="gc-block">
-                    <h2>Mercado de Tokens GLC</h2>
+                    <h2>Mercado Biteggcoin (simulado)</h2>
+                    <p class="gc-help">Precios estimados según el escenario de mercado. No son precios en tiempo real.</p>
                     <div class="gc-table-wrap">
                         <table class="gc-table">
                             <thead>
@@ -63,9 +64,15 @@
                 </div>
 
                 <div class="gc-block">
-                    <h2>Precio de tokens por granja</h2>
+                    <h2>Precio estimado por granja</h2>
                     <canvas id="gc-grafico-cliente" height="220"></canvas>
                 </div>
+            </div>
+
+            <div class="gc-block">
+                <h2>Evolución de mi inversión</h2>
+                <p class="gc-help">Valor estimado de los tokens que conservas después de cada operación y avance mensual.</p>
+                <canvas id="gc-grafico-inversion" height="120"></canvas>
             </div>
 
             <div class="gc-block">
@@ -76,6 +83,15 @@
                             <tr><th>Granja</th><th>Tokens</th><th>Costo prom.</th><th>Precio actual</th><th>P/L</th><th></th></tr>
                         </thead>
                         <tbody id="gc-tabla-portafolio"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="gc-block">
+                <h2>Operaciones recientes</h2>
+                <div class="gc-table-wrap">
+                    <table class="gc-table">
+                        <thead><tr><th>Mes</th><th>Operación</th><th>Granja</th><th>Cantidad</th><th>Precio</th><th>Total</th><th>Ganancia / pérdida realizada</th></tr></thead>
+                        <tbody id="gc-tabla-transacciones"></tbody>
                     </table>
                 </div>
             </div>

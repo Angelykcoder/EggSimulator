@@ -106,6 +106,12 @@ input {
   color: var(--text-secondary);
 }
 
+.gc-help {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
 .gc-stat__value {
   font-size: 1.05rem;
   font-weight: 600;

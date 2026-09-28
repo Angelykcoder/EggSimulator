@@ -2,18 +2,18 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from state_manager import StateManager
-from services.market_service import MarketService
-from services.farm_service import FarmService
-from services.trading_service import TradingService
-from services.simulation_service import SimulationService
+from .state_manager import StateManager
+from .services.market_service import MarketService
+from .services.farm_service import FarmService
+from .services.trading_service import TradingService
+from .services.simulation_service import SimulationService
 
 app = FastAPI(title="GallinaCoin API")
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
