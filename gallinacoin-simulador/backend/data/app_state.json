@@ -1,21 +1,33 @@
 {
-  "mes_actual": "Octubre 2026",
-  "mes_indice": 1,
+  "mes_actual": "Diciembre 2026",
+  "mes_indice": 3,
   "usuarios": {
     "cliente": {
-      "saldo": 2930.0,
+      "saldo": 5820.4342,
       "portafolio": [
         {
           "granja_id": 2,
-          "tokens": 138,
+          "tokens": 136,
           "costo_promedio": 15.0
+        },
+        {
+          "granja_id": 3,
+          "tokens": 2,
+          "costo_promedio": 200.0
+        },
+        {
+          "granja_id": 4,
+          "tokens": 9,
+          "costo_promedio": 100.0
         }
       ]
     },
     "granjero": {
-      "saldo": 10000,
+      "saldo": 8900.0,
       "granjas_propias": [
-        1
+        1,
+        3,
+        4
       ]
     }
   },
@@ -23,14 +35,14 @@
     {
       "id": 1,
       "nombre": "Granja El Amanecer",
-      "gallinas": 500,
+      "gallinas": 505,
       "produccion_promedio": 450,
       "alimento_costo": 800,
       "mantenimiento_costo": 200,
       "otros_costos": 100,
-      "precio_token": 312.4475,
+      "precio_token": 983.8525,
       "tokens_emitidos": 1000,
-      "valor_patrimonial": 312447.5
+      "valor_patrimonial": 983952.5
     },
     {
       "id": 2,
@@ -40,9 +52,33 @@
       "alimento_costo": 1280,
       "mantenimiento_costo": 320,
       "otros_costos": 150,
-      "precio_token": 661.1097,
-      "tokens_emitidos": 1062,
-      "valor_patrimonial": 793331.6
+      "precio_token": 2095.2171,
+      "tokens_emitidos": 1064,
+      "valor_patrimonial": 2514260.4
+    },
+    {
+      "id": 3,
+      "nombre": "Hola",
+      "gallinas": 150,
+      "produccion_promedio": 50.0,
+      "alimento_costo": 100.0,
+      "mantenimiento_costo": 100.0,
+      "otros_costos": 100.0,
+      "precio_token": 200.0,
+      "tokens_emitidos": 498,
+      "valor_patrimonial": 101000.0
+    },
+    {
+      "id": 4,
+      "nombre": "Luis Sex Farm",
+      "gallinas": 500,
+      "produccion_promedio": 20.0,
+      "alimento_costo": 20.0,
+      "mantenimiento_costo": 20.0,
+      "otros_costos": 100.0,
+      "precio_token": 100.0,
+      "tokens_emitidos": 991,
+      "valor_patrimonial": 100000.0
     }
   ],
   "historial_transacciones": [
@@ -85,6 +121,56 @@
       "ganancia_realizada": 0.0,
       "mes": "Septiembre 2026",
       "nombre_granja": "Granja Santa Rosa"
+    },
+    {
+      "tipo": "compra",
+      "granja_id": 3,
+      "cantidad": 2,
+      "precio_unitario": 200.0,
+      "monto_total": 400.0,
+      "ganancia_realizada": 0,
+      "mes": "Diciembre 2026",
+      "nombre_granja": "Hola"
+    },
+    {
+      "tipo": "venta",
+      "granja_id": 2,
+      "cantidad": 1,
+      "precio_unitario": 2095.2171,
+      "monto_total": 2095.22,
+      "ganancia_realizada": 2080.22,
+      "mes": "Diciembre 2026",
+      "nombre_granja": "Granja Santa Rosa"
+    },
+    {
+      "tipo": "venta",
+      "granja_id": 2,
+      "cantidad": 1,
+      "precio_unitario": 2095.2171,
+      "monto_total": 2095.22,
+      "ganancia_realizada": 2080.22,
+      "mes": "Diciembre 2026",
+      "nombre_granja": "Granja Santa Rosa"
+    },
+    {
+      "tipo": "compra",
+      "granja_id": 4,
+      "cantidad": 10,
+      "precio_unitario": 100.0,
+      "monto_total": 1000.0,
+      "ganancia_realizada": 0,
+      "mes": "Diciembre 2026",
+      "nombre_granja": "Luis Sex Farm"
+    },
+    {
+      "tipo": "venta",
+      "granja_id": 4,
+      "cantidad": 1,
+      "precio_unitario": 100.0,
+      "monto_total": 100.0,
+      "ganancia_realizada": 0.0,
+      "mes": "Diciembre 2026",
+      "nombre_granja": "Luis Sex Farm"
     }
   ],
   "historial_inversion": [
@@ -122,6 +208,55 @@
       "valor_portafolio": 91233.14,
       "costo_base": 2070.0,
       "ganancia_estimada": 89163.14
+    },
+    {
+      "mes": "Noviembre 2026",
+      "evento": "Avance mensual",
+      "valor_portafolio": 180396.28,
+      "costo_base": 2070.0,
+      "ganancia_estimada": 178326.28
+    },
+    {
+      "mes": "Diciembre 2026",
+      "evento": "Avance mensual",
+      "valor_portafolio": 289139.96,
+      "costo_base": 2070.0,
+      "ganancia_estimada": 287069.96
+    },
+    {
+      "mes": "Diciembre 2026",
+      "evento": "Compra",
+      "valor_portafolio": 289539.96,
+      "costo_base": 2470.0,
+      "ganancia_estimada": 287069.96
+    },
+    {
+      "mes": "Diciembre 2026",
+      "evento": "Venta",
+      "valor_portafolio": 287444.74,
+      "costo_base": 2455.0,
+      "ganancia_estimada": 284989.74
+    },
+    {
+      "mes": "Diciembre 2026",
+      "evento": "Venta",
+      "valor_portafolio": 285349.53,
+      "costo_base": 2440.0,
+      "ganancia_estimada": 282909.53
+    },
+    {
+      "mes": "Diciembre 2026",
+      "evento": "Compra",
+      "valor_portafolio": 286349.53,
+      "costo_base": 3440.0,
+      "ganancia_estimada": 282909.53
+    },
+    {
+      "mes": "Diciembre 2026",
+      "evento": "Venta",
+      "valor_portafolio": 286249.53,
+      "costo_base": 3340.0,
+      "ganancia_estimada": 282909.53
     }
   ]
 }

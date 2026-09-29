@@ -52,7 +52,7 @@
     try {
       estado = await GallinaCoinAPI.getState();
     } catch (error) {
-      mostrarMensaje("No se pudo conectar con el servidor: " + error.message, "error");
+      mostrarMensaje("No se pudo cargar el estado: " + error.message, "error");
       return;
     }
 
@@ -81,6 +81,13 @@
     } catch (error) {
       mostrarMensaje(error.message, "error");
     }
+  }
+
+  async function handleReset() {
+    if (!window.confirm("¿Reiniciar la simulación? Se perderán saldo, portafolio e historial.")) return;
+    await GallinaCoinAPI.resetSimulation();
+    mostrarMensaje("Simulación reiniciada", "success");
+    await refresh();
   }
 
   function showModal(contenidoEl) {
@@ -121,6 +128,7 @@
     attachTabs();
     attachModalOverlay();
     document.getElementById("gc-btn-avanzar-mes").addEventListener("click", handleAdvanceMonth);
+    document.getElementById("gc-btn-reiniciar").addEventListener("click", handleReset);
     switchTab("cliente");
     refresh();
   });
